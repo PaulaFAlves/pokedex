@@ -1,8 +1,11 @@
+import React from 'react'
+import PokemonsProvider from './provider/PokemonsProvider'
+
 function App() {
   return (
-    <div className="App">
-     teste
-    </div>
+    <PokemonsProvider>
+        
+    </PokemonsProvider>
   );
 }
 
