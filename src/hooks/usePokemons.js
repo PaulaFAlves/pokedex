@@ -4,22 +4,28 @@ import api from '../api/axios'
 const usePokemons = () => {
 	const [pokemons, setPokemons] = useState([])
 	const [isFetching, setIsFetching] = useState(false)
+	const [types, setTypes] = useState([])
 
 	useEffect(() => {
+		setIsFetching(true)
+
 		const fetchPokemons = async () => {
-			setIsFetching(true)
 
 			const data = await api.get('pokemon/?limit=1050')
 			const { results } = data.data
 			setPokemons(results)
-			setIsFetching(false)
 		}
 		fetchPokemons()
+		setIsFetching(false)
 	}, [])
 
+	if (isFetching) {
+		return <p>Loading...</p>
+	}
+
 	return (
-		pokemons,
-		isFetching
+		isFetching,
+		pokemons
 	)
 }
 
