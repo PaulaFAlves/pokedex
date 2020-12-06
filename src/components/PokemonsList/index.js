@@ -14,6 +14,7 @@ const PokemonsList = () => {
 					))
 				}
 			</div>
+			<div>teste</div>
 		</div>
 	)
 }
