@@ -9,12 +9,13 @@ const PokemonsList = () => {
 			<div className="pokemon-container">
 				{
 					pokemons && 
-					pokemons.map((pokemon) => (
-						<a href="#" className="pokemon-card">{`${pokemon.name[0].toUpperCase()}${pokemon.name.slice(1)}`}</a>
+					pokemons.map((pokemon, index) => (
+						<a href="#" className="pokemon-card" key={index}>
+							{`${pokemon.name[0].toUpperCase()}${pokemon.name.slice(1)}`}
+						</a>
 					))
 				}
 			</div>
-			<div>teste</div>
 		</div>
 	)
 }

@@ -16,8 +16,10 @@ const Home = () => {
 				<nav className="types-menu">
 					{
 						types &&
-						types.map((type) => (
-							<a href="#">{`${type.name[0].toUpperCase()}${type.name.slice(1)}`}</a>
+						types.map((type, index) => (
+							<a href="#" key={index}>
+								{`${type.name[0].toUpperCase()}${type.name.slice(1)}`}
+							</a>
 						))
 					}
 				</nav>
