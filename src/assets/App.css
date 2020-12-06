@@ -1,9 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Ranchers&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
 * {
     padding: 0;
     border: 0;
     box-sizing: border-box;
     background-color: #000000;
-    color: #ffffff;
+		color: #ffffff;
+		font-family: 'Roboto', sans-serif;
 }
 
 .header {
@@ -14,6 +18,7 @@
 .header h2 {
 	font-size: 46px;
 	font-weight: bold;
+	font-family: 'Ranchers', cursive;
 }
 
 .search {
@@ -50,8 +55,6 @@
 	margin: auto;
 	overflow-y: scroll;
 }
-
-
 
 .pokemon-container {
 	display: grid;
