@@ -1,5 +1,6 @@
 import React, { useContext } from 'react'
 import { PokemonsContext } from '../../provider/PokemonsProvider'
+import { Link } from 'react-router-dom'
 
 import PokemonsList from '../PokemonsList'
 
@@ -17,9 +18,9 @@ const Home = () => {
 					{
 						types &&
 						types.map((type, index) => (
-							<a href="#" key={index}>
+							<Link to="/" key={index}>
 								{`${type.name[0].toUpperCase()}${type.name.slice(1)}`}
-							</a>
+							</Link>
 						))
 					}
 				</nav>
