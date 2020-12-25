@@ -1,18 +1,19 @@
 import React, { useContext } from 'react'
 import { PokemonsContext } from '../../provider/PokemonsProvider'
+import { Link } from 'react-router-dom'
 
 const PokemonsList = () => {
-	const { pokemons} = useContext(PokemonsContext)
+	const { pokemons } = useContext(PokemonsContext)
 
 	return (
 		<div >
 			<div className="pokemon-container">
 				{
-					pokemons && 
+					pokemons &&
 					pokemons.map((pokemon, index) => (
-						<a href="#" className="pokemon-card" key={index}>
+						<Link to="/pokemon" className="pokemon-card" key={index}>
 							{`${pokemon.name[0].toUpperCase()}${pokemon.name.slice(1)}`}
-						</a>
+						</Link>
 					))
 				}
 			</div>
