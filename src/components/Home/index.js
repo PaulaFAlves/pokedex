@@ -12,7 +12,7 @@ const Home = () => {
 	const { types } = useContext(PokemonsContext)
 
 	return (
-		<div>
+		<div className="main-container">
 			<div className="header">
 				<h2>Pokedex</h2>
 				<form>
@@ -40,6 +40,11 @@ const Home = () => {
 				<PokemonsList
 					watch={watch}
 				/>
+			</div>
+			<div className="footer">
+				<div className="footer-text">
+					Developed by Paula Alves
+				</div>
 			</div>
 		</div>
 	)
