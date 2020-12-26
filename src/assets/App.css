@@ -58,7 +58,6 @@ font-size: 14px;
 .content {
 width: 80%;
 height: 60vh;
-background-color: red;
 margin: auto;
 overflow-y: scroll;
 }

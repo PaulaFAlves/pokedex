@@ -4,7 +4,6 @@ import api from '../api/axios'
 const usePokemons = () => {
 	const [pokemons, setPokemons] = useState([])
 	const [isFetching, setIsFetching] = useState(false)
-	const [types, setTypes] = useState([])
 
 	useEffect(() => {
 		setIsFetching(true)
