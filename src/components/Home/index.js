@@ -1,4 +1,5 @@
 import React, { useContext } from 'react'
+import { useForm } from 'react-hook-form'
 import { PokemonsContext } from '../../provider/PokemonsProvider'
 import { Link } from 'react-router-dom'
 
@@ -7,13 +8,23 @@ import PokemonsList from '../PokemonsList'
 import '../../assets/App.css'
 
 const Home = () => {
+	const { register, watch } = useForm()
 	const { types } = useContext(PokemonsContext)
 
 	return (
 		<div>
 			<div className="header">
 				<h2>Pokedex</h2>
-				<input className="search" type="text" placeholder="Search" aria-label="Search" />
+				<form>
+					<input
+						className="search"
+						type="text"
+						placeholder="Search"
+						name="search"
+						ref={register}
+						autoComplete="off"
+					/>
+				</form>
 				<nav className="types-menu">
 					{
 						types &&
@@ -26,7 +37,9 @@ const Home = () => {
 				</nav>
 			</div>
 			<div className="content" id="#style-2">
-				<PokemonsList />
+				<PokemonsList
+					watch={watch}
+				/>
 			</div>
 		</div>
 	)
