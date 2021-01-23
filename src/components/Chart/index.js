@@ -8,10 +8,10 @@ const Chart = () => {
 
   const types = [
     { name: 'normal', value: 10 },
-    { name: 'fighti', value: 22 },
-    { name: 'flyin', value: 3 },
-    { name: 'poiso', value: 7 },
-    { name: 'groun', value: 10 },
+    { name: 'fighting', value: 22 },
+    { name: 'flying', value: 3 },
+    { name: 'poison', value: 7 },
+    { name: 'ground', value: 10 },
     { name: 'rock', value: 22 },
     { name: 'bug', value: 3 },
     { name: 'ghost', value: 7 },
@@ -19,8 +19,8 @@ const Chart = () => {
     { name: 'fire', value: 22 },
     { name: 'water', value: 3 },
     { name: 'grass', value: 7 },
-    { name: 'electr', value: 10 },
-    { name: 'psychi', value: 22 },
+    { name: 'electric', value: 10 },
+    { name: 'psychic', value: 22 },
     { name: 'ice', value: 3 },
     { name: 'dragon', value: 7 },
     { name: 'dark', value: 10 },
@@ -28,18 +28,6 @@ const Chart = () => {
     { name: 'shadow', value: 3 },
     { name: 'unknwon', value: 7 },
   ]
-
-  useEffect(() => {
-    setList(pokemons)
-    let typesList = []
-    if (list) {
-      list.map((pokemon) => pokemon.types.map((t) => {
-        typesList.push(t.type.name)
-      }))
-      let count = {}
-      typesList.forEach(function (i) { count[i] = (count[i] || 0) + 1; })
-    }
-  }, [pokemons])
 
   const backButton = () => {
     window.history.back()
