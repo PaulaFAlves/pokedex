@@ -22,7 +22,7 @@ const usePokemons = () => {
 				})
 				return pokemonInfo
 			})
-			setPokemons(pokemonsList)
+			setPokemons(results)
 		}
 		fetchPokemons()
 		setIsFetching(false)

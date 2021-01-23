@@ -35,6 +35,11 @@ font-weight: bold;
 font-family: 'Ranchers', cursive;
 }
 
+.header-options {
+	display: flex;
+	justify-content: space-around;
+}
+
 .search {
 width: 20wv;
 font-size: 14px;
@@ -117,6 +122,11 @@ text-align:center;
 	cursor: pointer;
 	color: #fff;
 	padding-bottom: 10px;
+}
+
+.links img {
+	width: 30px;
+	margin: 30px;
 }
 
 .basic-button:hover, .links:hover {

@@ -1,8 +1,10 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useContext } from 'react'
 import { Link } from 'react-router-dom'
+import { PokemonsContext } from '../../provider/PokemonsProvider'
 
-const PokemonsList = ({ watch, pokemons }) => {
+const PokemonsList = ({ watch }) => {
 	const [pokemonsFiltered, setPokemonsFiltered] = useState([])
+	const { types, pokemons } = useContext(PokemonsContext)
 	const search = watch('search')
 
 	useEffect(() => {
@@ -17,7 +19,7 @@ const PokemonsList = ({ watch, pokemons }) => {
 		<div >
 			<div className="pokemon-container">
 				{
-					pokemons &&
+					pokemonsFiltered &&
 					pokemonsFiltered.map((pokemon, index) => (
 						<Link to="/pokemon" className="pokemon-card" key={index}>
 							{`${pokemon.name[0].toUpperCase()}${pokemon.name.slice(1)}`}

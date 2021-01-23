@@ -4,7 +4,7 @@ import { PokemonsContext } from '../../provider/PokemonsProvider'
 import { Link } from 'react-router-dom'
 
 import PokemonsList from '../PokemonsList'
-import Chart from '../Chart'
+import chart from '../../assets/images/chart.png'
 
 import '../../assets/App.css'
 
@@ -16,7 +16,7 @@ const Home = () => {
 		<div className="main-container">
 			<div className="header">
 				<h2>Pokedex</h2>
-				<form>
+				<form className="header-options">
 					<input
 						className="search"
 						type="text"
@@ -25,13 +25,13 @@ const Home = () => {
 						ref={register}
 						autoComplete="off"
 					/>
+					{
+						pokemons
+						&& (
+							<Link to="/chart" className="links"><img src={chart} alt="Chart" title="Chart" /></Link>
+						)
+					}
 				</form>
-				{
-					pokemons
-					&& (
-						<Link to="/chart" className="links">Chart</Link>
-					)
-				}
 				<nav className="types-menu">
 					{
 						types &&
