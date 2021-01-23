@@ -12,7 +12,17 @@ const usePokemons = () => {
 
 			const data = await api.get('pokemon/?limit=1050')
 			const { results } = data.data
-			setPokemons(results)
+
+			const pokemonsList = results.map((p) => {
+				const pokemonInfo = {}
+				fetch(p.url).then(res => res.json()).then(data => {
+					pokemonInfo.name = p.name
+					pokemonInfo.id = data.id
+					pokemonInfo.types = data.types
+				})
+				return pokemonInfo
+			})
+			setPokemons(pokemonsList)
 		}
 		fetchPokemons()
 		setIsFetching(false)

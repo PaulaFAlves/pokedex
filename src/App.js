@@ -5,6 +5,7 @@ import PokemonsProvider from './provider/PokemonsProvider'
 import './assets/App.css'
 import Home from './components/Home';
 import PokemonDetail from './components/PokemonDetail';
+import Chart from './components/Chart';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <PokemonsProvider>
           <Route path="/" exact component={Home} />
           <Route path="/pokemon" component={PokemonDetail} />
+          <Route path="/chart" component={Chart} />
         </PokemonsProvider>
       </Switch>
     </Router>

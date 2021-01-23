@@ -4,12 +4,13 @@ import { PokemonsContext } from '../../provider/PokemonsProvider'
 import { Link } from 'react-router-dom'
 
 import PokemonsList from '../PokemonsList'
+import Chart from '../Chart'
 
 import '../../assets/App.css'
 
 const Home = () => {
 	const { register, watch } = useForm()
-	const { types } = useContext(PokemonsContext)
+	const { types, pokemons } = useContext(PokemonsContext)
 
 	return (
 		<div className="main-container">
@@ -25,6 +26,12 @@ const Home = () => {
 						autoComplete="off"
 					/>
 				</form>
+				{
+					pokemons
+					&& (
+						<Link to="/chart" className="links">Chart</Link>
+					)
+				}
 				<nav className="types-menu">
 					{
 						types &&
@@ -37,9 +44,16 @@ const Home = () => {
 				</nav>
 			</div>
 			<div className="content" id="#style-2">
-				<PokemonsList
-					watch={watch}
-				/>
+				{
+					pokemons
+					&& (
+						<PokemonsList
+							watch={watch}
+							pokemons={pokemons}
+						/>
+					)
+				}
+
 			</div>
 			<div className="footer">
 				<div className="footer-text">
